@@ -6733,6 +6733,10 @@
       "PackagePath": "staticwebassets\\fontawesome\\webfonts\\fa-solid-900.woff2"
     },
     {
+      "Id": "D:\\Scripts\\ASPPractice\\ASPPractice\\wwwroot\\images\\products\\6e201ba4-144b-4e77-a9e6-7e46c7ff9522.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\6e201ba4-144b-4e77-a9e6-7e46c7ff9522.jpg"
+    },
+    {
       "Id": "D:\\Scripts\\ASPPractice\\ASPPractice\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

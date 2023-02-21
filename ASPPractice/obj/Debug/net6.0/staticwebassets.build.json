@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tPDSj1tVyyOTsIHwzdkIQ5edo4FVIrWHedCS2Pk31rA=",
+  "Hash": "LM8GsIlYQXY6IjKX21pPtoiGDu/GfCbJSAghl8MWDbg=",
   "Source": "ASPPractice",
   "BasePath": "_content/ASPPractice",
   "Mode": "Default",
@@ -28643,6 +28643,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Identity": "D:\\Scripts\\ASPPractice\\ASPPractice\\wwwroot\\images\\products\\6e201ba4-144b-4e77-a9e6-7e46c7ff9522.jpg",
+      "SourceId": "ASPPractice",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Scripts\\ASPPractice\\ASPPractice\\wwwroot\\",
+      "BasePath": "_content/ASPPractice",
+      "RelativePath": "images/products/6e201ba4-144b-4e77-a9e6-7e46c7ff9522.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\6e201ba4-144b-4e77-a9e6-7e46c7ff9522.jpg"
     },
     {
       "Identity": "D:\\Scripts\\ASPPractice\\ASPPractice\\wwwroot\\js\\site.js",

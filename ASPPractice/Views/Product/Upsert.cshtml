@@ -73,6 +73,20 @@
                 </div>
                 <br />
                 <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Product.ApplicationTypeId"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Product.ApplicationTypeId" asp-items="@Model.ApplicationSelectList" class="form-control">
+                            <option disabled selected>-- Select Application Type --</option>
+                        </select>
+
+                        <span asp-validation-for="Product.ApplicationTypeId" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br />
+                <div class="form-group row">
                     <div class="col-8 offset-4 row">
                         
                         <div class="col">

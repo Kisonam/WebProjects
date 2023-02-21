@@ -33,6 +33,8 @@
                     <tr>
                         <td width="50%">@obj.Name</td>
                         <td width="30%">@obj.Price</td>
+                        <td width="30%">@obj.Category.Name</td>
+                        <td width="30%">@obj.ApplicationType.Name</td>
                         <td class="text-center">
                             <div class="w-75 btn-group" role="group">
                                 <a asp-route-Id="@obj.Id" asp-action="Upsert" class="btn btn-primary mx-2">

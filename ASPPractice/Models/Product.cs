@@ -15,7 +15,11 @@ namespace ASPPractice.Models
         public string Image { get; set; }
         [Display(Name= "Category Type")]
         public int CategoryId { get; set; }
+        [Display(Name = "Application Type")]
+        public int ApplicationTypeId { get; set; }
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+        [ForeignKey("ApplicationId")]
+        public virtual ApplicationType ApplicationType { get; set; }
     }
 }

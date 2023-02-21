@@ -7,5 +7,6 @@ namespace ASPPractice.Models.ViewModels
     {
         public Product Product { get; set; }
         public IEnumerable<SelectListItem> CategorySelectList { get; set; }
+        public IEnumerable<SelectListItem> ApplicationSelectList { get; set; }
     }
 }

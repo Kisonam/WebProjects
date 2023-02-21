@@ -3,6 +3,7 @@ using ASPPractice.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPPractice.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230221222619_AddApplicationTypeToDb")]
+    partial class AddApplicationTypeToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,9 +69,6 @@ namespace ASPPractice.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ApplicationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ApplicationTypeId")
                         .HasColumnType("int");
 
@@ -92,7 +92,7 @@ namespace ASPPractice.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationId");
+                    b.HasIndex("ApplicationTypeId");
 
                     b.HasIndex("CategoryId");
 
@@ -103,7 +103,7 @@ namespace ASPPractice.Migrations
                 {
                     b.HasOne("ASPPractice.Models.ApplicationType", "ApplicationType")
                         .WithMany()
-                        .HasForeignKey("ApplicationId")
+                        .HasForeignKey("ApplicationTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
