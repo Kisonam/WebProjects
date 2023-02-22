@@ -49,6 +49,16 @@
                 </div>
                 <br />
                 <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ApplicationId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ApplicationType.Name" disabled class="form-control" />
+                    </div>
+
+                </div>
+                <br />
+                <div class="form-group row">
                     <div class="col-8 offset-4 row">
 
                         <div class="col">
@@ -80,7 +90,6 @@
             $('.summernote').summernote({
                 height: 250,
                 disable:true
-
             });
         });
     </script>
