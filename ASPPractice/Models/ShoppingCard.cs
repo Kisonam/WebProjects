@@ -1,0 +1,7 @@
+﻿namespace ASPPractice.Models
+{
+    public class ShoppingCart
+    {
+        public int ProductId { get; set; }
+    }
+}
