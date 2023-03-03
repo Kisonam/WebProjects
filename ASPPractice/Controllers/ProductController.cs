@@ -61,8 +61,13 @@ namespace ASPPractice.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM productVM)
         {
-            //if (ModelState.IsValid)
-            //{
+            var errors = ModelState
+            .Where(x => x.Value.Errors.Count > 0)
+            .Select(x => new { x.Key, x.Value.Errors })
+            .ToArray();
+
+            if (ModelState.IsValid)
+            {
                 var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
 
@@ -113,7 +118,7 @@ namespace ASPPractice.Controllers
                 }
                 _db.SaveChanges();
                 return RedirectToAction("Index");
-            //}
+            }
             productVM.CategorySelectList = _db.Category.Select(i => new SelectListItem
             {
                 Text = i.Name,
