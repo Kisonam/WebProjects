@@ -1,0 +1,11 @@
+﻿@model Password
+
+<form method="post">
+    <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+        <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" type="text" name="num">
+        <br />
+        <input asp-for="@Model.PasswordValue" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    <a asp-action="Index" type="submit" class="btn btn-outline-info btn-sm">CREATE</a>
+</div>
+</form>
