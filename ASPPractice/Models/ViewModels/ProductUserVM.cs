@@ -1,10 +1,12 @@
-﻿namespace ASPPractice.Models.ViewModels
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace ASPPractice.Models.ViewModels
 {
     public class ProductUserVM
     {
         public ProductUserVM()
         {
-            ProductList= new List<Product>();
+            ProductList = new List<Product>();
         }
         public ApplicationUser ApplicationUser { get; set; }
         public IList<Product> ProductList { get; set; }

@@ -33,9 +33,9 @@ namespace ASPPractice.Controllers
         public IActionResult Details(int id)
         {
             List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
-            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard) != null && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard).Count() > 0)
+            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
             {
-                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCard);
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
             }
 
             DetailsVM DetailsVM = new DetailsVM()
@@ -62,12 +62,12 @@ namespace ASPPractice.Controllers
         public IActionResult DetailsPost(int id)
         {
             List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
-            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard) != null  && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard).Count() > 0)
+            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null  && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
             {
-                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCard);
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
             }
             shoppingCartList.Add(new ShoppingCart { ProductId = id});
-            HttpContext.Session.Set(WC.SessionCard, shoppingCartList);
+            HttpContext.Session.Set(WC.SessionCart, shoppingCartList);
 
             return RedirectToAction(nameof(Index));
         }
@@ -75,10 +75,10 @@ namespace ASPPractice.Controllers
         public  IActionResult RemoveFromCart(int id)
         {
             List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
-            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard) != null && 
-                HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCard).Count() > 0)
+            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null && 
+                HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
             {
-                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCard);
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
             }
 
             var itemToRemove = shoppingCartList.SingleOrDefault(r => r.ProductId == id);
@@ -86,7 +86,7 @@ namespace ASPPractice.Controllers
             {
                 shoppingCartList.Remove(itemToRemove);
             }
-            HttpContext.Session.Set(WC.SessionCard, shoppingCartList);
+            HttpContext.Session.Set(WC.SessionCart, shoppingCartList);
 
             return RedirectToAction(nameof(Index));
         }
@@ -95,6 +95,10 @@ namespace ASPPractice.Controllers
         public IActionResult Privacy()
         {
             
+            return View();
+        }
+        public IActionResult About()
+        {
             return View();
         }
 

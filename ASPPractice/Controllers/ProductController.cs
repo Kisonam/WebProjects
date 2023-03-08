@@ -1,12 +1,14 @@
 ﻿using ASPPractice.Data;
 using ASPPractice.Models;
 using ASPPractice.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASPPractice.Controllers
 {
+    [Authorize(Roles = WC.AdminRole)]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -66,9 +68,7 @@ namespace ASPPractice.Controllers
             .Select(x => new { x.Key, x.Value.Errors })
             .ToArray();
 
-            if (ModelState.IsValid)
-            {
-                var files = HttpContext.Request.Form.Files;
+            var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
 
                 if (productVM.Product.Id == 0)
@@ -117,14 +117,13 @@ namespace ASPPractice.Controllers
                     _db.Product.Update(productVM.Product);
                 }
                 _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
             productVM.CategorySelectList = _db.Category.Select(i => new SelectListItem
             {
                 Text = i.Name,
                 Value = i.Id.ToString()
             });
-            productVM.ApplicationSelectList = _db.Category.Select(i => new SelectListItem
+            productVM.ApplicationSelectList = _db.ApplicationType.Select(i => new SelectListItem
             {
                 Text = i.Name,
                 Value = i.Id.ToString()
